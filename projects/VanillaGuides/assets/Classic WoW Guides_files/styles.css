@@ -1,0 +1,149 @@
+@import url("hover-min.css");
+
+
+@media (max-width: 991px) {
+    .navbar-right {
+        display: none;
+    }
+}
+
+main {
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+
+.jumbotron {
+    background-image: url('../assets/loadscreen.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #eee;
+    border: none !important;
+}
+
+.addons-jumbo {
+    background-image: url('../assets/header-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+footer {
+    max-height: 50px;
+}
+
+.classBtn {
+    border-radius: 20%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.inactive {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+/* Class Colors */
+.druid {
+    color: #FF7D0A;
+}
+
+.hunter {
+    color: #ABD473;
+}
+
+.mageColor {
+    color: #69CCF0;
+}
+
+.paladin {
+    color: #F58CBA;
+}
+
+.priest {
+    color: #FFFFFF;
+}
+
+.priestAlert {
+    background-color: #FFFFFF !important;
+    color: #333 !important;
+}
+
+.rogue {
+    color: #FFF569;
+}
+
+.shaman {
+    color: #0070DE;
+}
+
+.shamanAlert {
+    background-color: #0070DE !important;
+}
+
+.warlock {
+    color: #9482C9;
+}
+
+.warrior {
+    color: #C79C6E;
+}
+
+.warriorAlert {
+    background-color: #C79C6E !important;
+    color: #333 !important;
+}
+
+/* Item Rarity Color */
+.common {
+    color: #1eff00 !important;
+}
+
+.rare {
+    color: #0070dd !important;
+}
+
+.epic {
+    color: #a335ee !important;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socialIcons {
+    margin-right: 25px;
+}
+
+.socialIcons a {
+    font-size: 1.5rem;
+    margin: 5px
+}
+
+.logo {
+    margin-left: 15px;
+}
+
+#navbarColor02 {
+    margin-left: 10px;
+}
+
+#scrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    z-index: 99;
+    font-size: 4rem;
+    border: none;
+    outline: none;
+    color: #eee;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}

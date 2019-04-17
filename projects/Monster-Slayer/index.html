@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css//font/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+
+    <div id="app">
+        <h1 class="text-center title animated fadeIn">Monster Slayer</h1>
+        <section class="row text-center">
+            <h1 class="vs animated bounceInDown">VS</h1>
+            <div class="small-6 columns" id="player-box">
+                <div class="player-image animated bounceInDown">
+                    <!-- Player-Image set as background image -->
+                </div>
+                <h1 class="text-center animated fadeIn">YOU</h1>
+                <div class="healthbar animated fadeIn">
+                    <div 
+                        class="healthbar text-center" 
+                        style="background-color: green; margin: 0; color: white;"
+                        :style="{width: playerHealth + '%'}">
+                        {{ playerHealth }}%
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 columns" id="monster-box">
+                <div class="monster-image animated bounceInDown">
+                    <!-- monster-Image set as background image -->
+                </div>
+                <h1 class="text-center animated fadeIn">MONSTER</h1>
+                <div class="healthbar animated fadeIn">
+                    <div 
+                    class="healthbar text-center" 
+                    style="background-color: green; margin: 0; color: white;"
+                    :style="{width: monsterHealth + '%'}">
+                        {{ monsterHealth }}%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="row controls" v-if="!gameIsRunning">
+            <div class="small-12 columns">
+                <button id="start-game" @click="startGame(); playSound('sounds/menu-button.wav')">START NEW GAME</button>
+            </div>
+        </section>
+
+        <section class="row controls" v-else>
+            <div class="small-12 columns">
+                <button id="attack" @click="attack(); playSound('sounds/attack.wav')"> <i class="flaticon-sword"></i> ATTACK</button>
+                <button id="special-attack" @click="specialAttack(); playSound('sounds/special-attack.mp3')"> <i class="flaticon-swords"></i> SPECIAL ATTACK</button>
+                <button id="heal" @click="heal(); playSound('sounds/heal-2.wav')"><i class="flaticon-cross"></i> HEAL</button>
+                <button id="give-up" @click="giveUp"><i class="flaticon-put-your-hands-up"></i> GIVE UP</button>
+            </div>
+        </section>
+
+        <section class="row log" v-if="turns.length > 0">
+            <div class="small-12 columns">
+                <h2 style="margin: 0;">Combat Log</h2>
+                <ul>
+                    <li v-for="turn in turns" 
+                        :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">
+                        {{ turn.text }}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
